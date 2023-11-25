@@ -1,3 +1,59 @@
-<h1>
-    You have created HTML file
-</h1>
+User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <!-- Include Bootstrap CSS (if you haven't already) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="mt-5">House Price Prediction</h2>
+
+        <!-- HTML form for user input -->
+        <form action="{{ url_for('predict') }}" method="post" class="mt-3">
+            <div class="form-group">
+                <label for="income">Avg. Income:</label>
+                <input type="text" id="income" name="income" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="house_age">Avg. House Age:</label>
+                <input type="text" id="house_age" name="house_age" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="num_rooms">Avg. Number of Rooms:</label>
+                <input type="text" id="num_rooms" name="num_rooms" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="num_bedrooms">Avg. Number of Bedrooms:</label>
+                <input type="text" id="num_bedrooms" name="num_bedrooms" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="area_population">Area Population:</label>
+                <input type="text" id="area_population" name="area_population" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">Predict Price</button>
+        </form>
+
+        <!-- Display predicted price here -->
+        <div id="prediction_result" class="mt-3"></div>
+    </div>
+
+    {{prediction_text}}
+
+    <!-- Include Bootstrap JS (if needed) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+</body>
+</html>
